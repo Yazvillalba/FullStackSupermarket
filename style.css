@@ -1,9 +1,10 @@
-body{
+body {
     padding: 0;
     margin: 0;
     width: 100%;
 }
-header{
+
+header {
     width: 100%;
     height: 5rem;
     background-color: black;
@@ -11,25 +12,119 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-ul{
+
+ul {
     color: white;
     margin: 0;
     display: flex;
-    gap: 15px
+    gap: 15px;
 }
-li{
-   list-style-type: none; 
+
+li {
+    list-style-type: none;
 }
-.container-name h2{
+
+.container-name h2 {
     color: white;
     margin: 0;
 }
-.container-name{
+
+.container-name {
     display: flex;
     margin-right: 2rem;
     align-items: center;
 }
-.carrito-compras{
+
+.carrito-compras {
     width: 40px;
     height: 40px;
+}
+
+.productos-container {
+    position: absolute;
+    justify-content: start;
+    margin: 20px;
+
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-item {
+    display: flex;
+}
+.d-flex{
+    display: flex;
+    gap: 30px;
+}
+.producto {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    gap: 10px;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.producto-info {
+    padding: 10px 0;
+}
+
+.producto-info h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.producto-info .precio {
+    font-size: 1.1rem;
+    color: #b12704;
+    margin: 5px 0;
+}
+
+.producto-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.producto-actions .cantidad-input {
+    width: 60px;
+    padding: 5px;
+}
+
+.like-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.agregar-button {
+    background-color: #ffa41c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.agregar-button:hover {
+    background-color: #ff8c00;
 }
