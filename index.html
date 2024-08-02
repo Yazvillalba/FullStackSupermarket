@@ -52,6 +52,7 @@
         </div>
         
     </header>
+ 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -96,7 +97,15 @@
         <img src="img/promoCarnes.jpg" alt="">
         <a href="milka.html"><img src="img/promoMilka.webp" alt=""></a>
     </section>
-    <footer class="bg-dark text-light py-4">
+    <div id="cart-popup" class="cart-popup" style="display: none;">
+        <div class="cart-popup-content">
+            <span id="close-cart-popup" class="close-cart-popup">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items-list"></ul>
+            <button id="finalize-purchase" class="btn btn-success">Finalizar compra</button>
+        </div>
+    </div>   
+    <footer class="footer text-light py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 text-center">

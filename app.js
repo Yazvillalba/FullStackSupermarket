@@ -120,30 +120,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    document.getElementById('cart-icon').addEventListener('click', function() {
+        const cartPopup = document.getElementById('cart-popup');
+        const cartItemsList = document.getElementById('cart-items-list');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const productos = JSON.parse(localStorage.getItem('productos')) || [];
+
+        cartItemsList.innerHTML = '';
+
+        cart.forEach(item => {
+            const producto = productos.find(p => p.id === item.id);
+            if (producto) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)} x ${item.quantity}`;
+                cartItemsList.appendChild(listItem);
+            }
+        });
+
+        cartPopup.style.display = 'flex';
+    });
+
+    document.getElementById('close-cart-popup').addEventListener('click', function() {
+        const cartPopup = document.getElementById('cart-popup');
+        cartPopup.style.display = 'none';
+    });
+
+    document.getElementById('finalize-purchase').addEventListener('click', function() {
+        alert('Compra finalizada');
+        localStorage.removeItem('cart');
+        updateCartCount();
+        const cartPopup = document.getElementById('cart-popup');
+        cartPopup.style.display = 'none';
+    });
+
     updateCartCount();
 });
-
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
-    const consulta = document.getElementById('consulta').value;
-
-    const data = `Nombre: ${nombre}\nApellido: ${apellido}\nEmail: ${email}\nTeléfono: ${telefono}\nConsulta: ${consulta}\n\n`;
-
-    saveDataToFile(data, 'contacto.txt');
-});
-
-function saveDataToFile(data, filename) {
-    const blob = new Blob([data], { type: 'text/plain' });
-    const link = document.createElement('a');
-
-    link.href = URL.createObjectURL(blob);
-    link.download = filename;
-    link.click();
-
-    URL.revokeObjectURL(link.href);
-}
