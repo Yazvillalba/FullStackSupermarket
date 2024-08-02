@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const productos = [
-        { nombre: "Producto 1", precio: 10.00, img: "img/milka/producto1.webp" },
-        { nombre: "Producto 2", precio: 20.00, img: "img/milka/producto2.webp" },
-        { nombre: "Producto 3", precio: 15.00, img: "img/milka/producto3.webp" },
-        { nombre: "Producto 4", precio: 25.00, img: "img/milka/producto1.webp" },
-        { nombre: "Producto 5", precio: 30.00, img: "img/milka/producto2.webp" },
-        { nombre: "Producto 6", precio: 35.00, img: "img/milka/producto3.webp" },
-        { nombre: "Producto 7", precio: 30.00, img: "img/milka/producto2.webp" },
-        { nombre: "Producto 8", precio: 30.00, img: "img/milka/producto2.webp" },
+        { nombre: "Alfajor Milka Mousse", precio: 10.00, img: "img/milka/producto1.webp" },
+        { nombre: "Milka Leche", precio: 20.00, img: "img/milka/producto2.webp" },
+        { nombre: "Chocopause Oreo", precio: 15.00, img: "img/milka/producto3.webp" },
+        { nombre: "Chocopause Leche", precio: 25.00, img: "img/milka/producto4.webp" },
+        { nombre: "Chocolate Aireado con Almendras", precio: 30.00, img: "img/milka/producto5.webp" },
+        { nombre: "Chocolate Relleno Dulce de Leche", precio: 35.00, img: "img/milka/producto6.webp" },
+        { nombre: "Chocolate Castañas con Caramelo", precio: 30.00, img: "img/milka/producto7.webp" },
+        { nombre: "Chocolate Relleno Oreo", precio: 30.00, img: "img/milka/producto8.webp" },
     ];
 
     const productosContainer = document.querySelector('.productos-container');    

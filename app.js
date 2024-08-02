@@ -89,37 +89,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.agregar-button').forEach(button => {
         button.addEventListener('click', function() {
-            const productoElement = this.closest('.producto');
+            let productoElement = this.parentElement;
+            
+            // Recorre hacia arriba en el DOM hasta encontrar un elemento con la clase '.producto'
+            while (productoElement && !productoElement.classList.contains('producto')) {
+                productoElement = productoElement.parentElement;
+            }
+    
+            if (!productoElement) return; // Si no se encontró el elemento, salir
+    
             const cantidadInput = productoElement.querySelector('.cantidad-input');
             const quantity = parseInt(cantidadInput.value, 10);
             const productoId = parseInt(productoElement.dataset.id, 10);
-
+    
             if (isNaN(quantity) || quantity <= 0) return; //controla la cantidad del input que no debe ser menor a 0
-
+    
             const productos = JSON.parse(localStorage.getItem('productos'));
             const producto = productos.find(p => p.id === productoId);
             if (!producto) return;
-
+    
             if (quantity > producto.stock) {
                 alert(`No hay suficiente stock para ${producto.nombre}. Stock disponible: ${producto.stock}`);
                 return;
             }
-
+    
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             const existingItemIndex = cart.findIndex(item => item.id === productoId);
-
+    
             if (existingItemIndex >= 0) {
                 cart[existingItemIndex].quantity += quantity;
             } else {
                 cart.push({ id: productoId, quantity });
             }
-
+    
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
             updateProductStock(productoId, quantity);
         });
     });
-
+    
     document.getElementById('cart-icon').addEventListener('click', function() {
         const cartPopup = document.getElementById('cart-popup');
         const cartItemsList = document.getElementById('cart-items-list');
