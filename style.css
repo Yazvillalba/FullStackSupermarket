@@ -12,6 +12,9 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+footer{
+    margin-top: 20px;
+}
 
 ul {
     color: white;
@@ -52,7 +55,7 @@ li {
 }
 
 .carousel-item {
-    display: flex;
+    
     justify-content: center;
 }
 
@@ -120,7 +123,7 @@ li {
 }
 
 .agregar-button {
-    background-color: #ffa41c;
+    background-color: #0e0d0d;
     border: none;
     color: white;
     padding: 10px 15px;
@@ -131,7 +134,7 @@ li {
 }
 
 .agregar-button:hover {
-    background-color: #ff8c00;
+    background-color: #5f5b56;
 }
 
 .promos {
@@ -208,14 +211,14 @@ label{
     width: 100%;
 }
 .section-slogans{
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap:40px;
 }
 .container-productos{
     display: flex;
-    justify-content: center;
     margin-left: 40px;
     margin-top: 30px;
+    gap:10px;
 }
