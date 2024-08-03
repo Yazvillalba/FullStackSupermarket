@@ -94,17 +94,49 @@
         </button>
     </div>
     <section class="promos">
-        <img src="img/promoCarnes.jpg" alt="">
+        <a href="carnes.html"><img src="img/promoCarnes.jpg" alt=""></a>
         <a href="milka.html"><img src="img/promoMilka.webp" alt=""></a>
     </section>
+
     <div id="cart-popup" class="cart-popup" style="display: none;">
         <div class="cart-popup-content">
-            <span id="close-cart-popup" class="close-cart-popup">&times;</span>
+            <span id="close-cart-popup" class="close-cart-popup dark">&times;</span>
             <h2>Carrito de Compras</h2>
-            <ul id="cart-items-list"></ul>
+            <ul id="cart-items-list" class="d-block"></ul>
+            <div id="payment-methods">
+                <h3>Método de Pago</h3>
+                <div class="d-flex mb-3 justify-content-center">
+                    <div>
+                        <input type="radio" id="credit-card" name="payment-method" value="credit-card">
+                        <label for="credit-card">Tarjeta de Crédito</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cash" name="payment-method" value="cash">
+                        <label for="cash">Efectivo</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mercado-pago" name="payment-method" value="mercado-pago">
+                        <label for="mercado-pago">Mercado Pago</label>
+                    </div>
+                </div>
+            </div>
+            <div id="total-price" class="mb-3">$Total $0.00</div>
+            <p id="payment-error" style="color: red; display: none;">Por favor, seleccione un método de pago.</p>
             <button id="finalize-purchase" class="btn btn-success">Finalizar compra</button>
         </div>
-    </div>   
+    </div>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="purchase-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Notificación</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Compra finalizada exitosamente.
+            </div>
+        </div>
+    </div>
+    
     <footer class="footer text-light py-4">
         <div class="container">
             <div class="row">
@@ -129,7 +161,7 @@
         </div>
         
     </footer>
-    
+
     <!-- Libreria de Iconos de Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
