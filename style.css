@@ -49,6 +49,12 @@ li {
     margin-top: 20px;
 }
 
+.carousel-control-prev-icon i,
+.carousel-control-next-icon i {
+    font-size: 4rem; 
+    color: #030303; 
+}
+
 .carousel-inner {
     display: flex;
     flex-direction: row;
