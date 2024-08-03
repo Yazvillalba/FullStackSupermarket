@@ -186,6 +186,35 @@ li {
     display: flex;
     flex-direction: column;
 }
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.cart-item-img {
+    width: 70px; 
+    height: auto;
+    margin-right: 10px;
+}
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    margin-right: 5px;
+}
+
+.cart-item-quantity {
+    font-style: italic;
+}
+.precio-original {
+    text-decoration: line-through;
+    color: red;
+    margin-right: 8px;
+}
+
 /* TOAST */
 .toast-container {
     z-index: 1055;
@@ -299,6 +328,9 @@ label{
 /* CARNERS */
 .banner-carnes{
     width: 100%;
+}
+.carne-information{
+    width: 60%;
 }
 .informacion-carnes{
     align-items: center;
